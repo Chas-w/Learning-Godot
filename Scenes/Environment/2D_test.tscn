@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://dwtq10mgv7atg"]
+
+[ext_resource type="Shader" uid="uid://dx3p07n1oe2vv" path="res://Shaders/crt_shader.gdshader" id="1_kf8sv"]
+[ext_resource type="PackedScene" uid="uid://cns876v2cymns" path="res://Scenes/Environment/3D_test.tscn" id="2_cow6u"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_eitm8"]
+viewport_path = NodePath("CRT/3D Test")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_vpu8h"]
+viewport_path = NodePath("CRT/3D Test")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a0nb6"]
+resource_local_to_scene = true
+shader = ExtResource("1_kf8sv")
+shader_parameter/tex = SubResource("ViewportTexture_vpu8h")
+shader_parameter/mask_type = 1
+shader_parameter/curve = 0.5
+shader_parameter/color_offset = 0.5
+shader_parameter/mask_brightness = 1.0
+shader_parameter/aspect = 1.0
+
+[node name="Master Visualizer" type="Node2D" unique_id=475659722]
+
+[node name="3D Visualizer" type="Sprite2D" parent="." unique_id=1846336397]
+scale = Vector2(3, 3)
+texture = SubResource("ViewportTexture_eitm8")
+centered = false
+
+[node name="CRT" type="Node" parent="." unique_id=412558718]
+
+[node name="ColorRect" type="ColorRect" parent="CRT" unique_id=1051604140]
+clip_children = 2
+material = SubResource("ShaderMaterial_a0nb6")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="3D Test" parent="CRT" unique_id=1228763034 instance=ExtResource("2_cow6u")]
+
+[editable path="CRT/3D Test"]
