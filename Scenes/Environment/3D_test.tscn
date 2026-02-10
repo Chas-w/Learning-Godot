@@ -396,6 +396,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.4151015, 0)
 multimesh = SubResource("MultiMesh_u35mb")
 
 [node name="Player" parent="." unique_id=682344934 instance=ExtResource("8_tti7i")]
-transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 3.0549874, 0)
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, -1.4650435, 0)
 
 [editable path="Player"]

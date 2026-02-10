@@ -41,3 +41,4 @@ metadata/_edit_lock_ = true
 [node name="3D Test" parent="CRT" unique_id=1228763034 instance=ExtResource("2_cow6u")]
 
 [editable path="CRT/3D Test"]
+[editable path="CRT/3D Test/Player"]

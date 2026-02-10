@@ -3,19 +3,11 @@ extends CharacterBody3D
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
-const MOUSE_SENS = .02
 
-@onready var head = $Head
-@onready var cam = $Head/Camera3D
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
-func _unhandled_input(event):
-	if event is InputEventMouseMotion:
-		head.rotate_y(-event.relative.x * MOUSE_SENS)
-		cam.rotate_x(-event.relative.y * MOUSE_SENS)
-		cam.rotation.x = clamp(cam.rotation.x, deg_to_rad(-40), deg_to_rad(60))
 		
 func _physics_process(delta):
 	# Add the gravity.
